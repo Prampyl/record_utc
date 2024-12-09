@@ -34,7 +34,7 @@ class CreateInitialTables extends Migration
             $table->text('description')->nullable();
             $table->string('image_url')->nullable();
             $table->foreignId('category_id')->constrained()->onDelete('cascade');
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('user_id')->nullable()->constrained()->onDelete('cascade'); # A MODIFIER QUAND IL Y AURA LE CAS
             $table->timestamps();
         });
         // Create previous_records table
